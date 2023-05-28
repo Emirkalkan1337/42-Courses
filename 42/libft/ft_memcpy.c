@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void *my_memcpy(void *restrict dest, const void *restrict src, size_t n) 
-{
-    char *destt = (char *) dest;
-    const char *srcc = (const char *) src;
+#include <stddef.h>
 
-    while (n--)
-    {
-        *destt++ = *srcc++;
-    }
+void *ft_memcpy(void *dest, const void *src, size_t n) 
+{
+	char *destt = dest;
+	const char *srcc = src;
+
+	while (n--)
+		*destt++ = *srcc++;
     return dest;
 }
 

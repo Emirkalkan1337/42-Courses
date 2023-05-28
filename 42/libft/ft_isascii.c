@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emkalkan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emkalkan <emkalkan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:17:36 by emkalkan          #+#    #+#             */
-/*   Updated: 2023/05/06 16:14:45 by emkalkan         ###   ########.fr       */
+/*   Updated: 2023/05/19 13:08:40 by emkalkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	return (if c >= '0' && c <= '127');
+	return (c >= 0 && c <= 127);
 }
 
 /*#include <stdio.h>

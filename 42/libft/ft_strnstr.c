@@ -1,44 +1,35 @@
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emkalkan <emkalkan@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/18 19:14:36 by emkalkan          #+#    #+#             */
+/*   Updated: 2023/05/28 15:15:42 by emkalkan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char	*big, const char *little, size_t len)
 {
-	char	*haystack_tmp;
-	char	*needle_tmp;
 	size_t	i;
+	size_t	j;
 
-	if (!ft_strlen(needle))
-		return ((char *)haystack);
-	if (!ft_strlen(haystack) || len < ft_strlen(needle))
-		return (0);
-	i = len - ft_strlen(needle) + 1;
-	while (i-- && *haystack)
+	i = 0;
+	if (len == 0 || ft_strncmp(little, "", 1) == 0)
+		return ((char *)big);
+	while (i < len)
 	{
-		haystack_tmp = (char *)haystack;
-		needle_tmp = (char *)needle;
-		while (*needle_tmp && *needle_tmp == *haystack_tmp)
+		j = 0;
+		while (big[i + j] == little[j] && i + j < len)
 		{
-			++haystack_tmp;
-			++needle_tmp;
+			if (little[j + 1] == 0)
+				return ((char *)big + i);
+			j++;
 		}
-		if (!*needle_tmp)
-			return ((char *)haystack);
-		++haystack;
+		i++;
 	}
-	return (0);
+	return (NULL);
 }
-
-/*#include <stdio.h>
-#include "libft.h"
-
-int main(void)
-{
-    char *haystack = "Hello, world!";
-    char *needle = "world";
-    char *result = ft_strnstr(haystack, needle, 13);
-    if (result != NULL)
-        printf("'%s' was found in '%s'\n", needle, haystack);
-    else
-        printf("'%s' was not found in '%s'\n", needle, haystack);
-    return 0;
-}*/

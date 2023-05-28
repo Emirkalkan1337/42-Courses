@@ -10,17 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
 void ft_bzero(void *s, size_t n)
 {
-    void    *dest;
-
-    dest = s;
     while (n--)
     {
         *((char *) s) = '\0';
         s++;
     }
-    return (dest);
 }
 
 /*int main()

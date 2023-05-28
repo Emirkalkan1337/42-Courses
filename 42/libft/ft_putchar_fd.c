@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emkalkan <emkalkan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 15:44:29 by emkalkan          #+#    #+#             */
-/*   Updated: 2023/05/19 13:07:49 by emkalkan         ###   ########.fr       */
+/*   Created: 2023/05/18 19:58:11 by emkalkan          #+#    #+#             */
+/*   Updated: 2023/05/19 12:39:30 by emkalkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+#include <unistd.h>
+
+void ft_putchar_fd(char c, int fd)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+    write(fd, &c, 1);
 }
-
-/*#include <stdio.h>
-
-int ft_isalpha(int c);
-
-int main(void)
-{
-    printf("%d\n", ft_isalpha('a')); // should print 1
-    printf("%d\n", ft_isalpha('Z')); // should print 1
-    printf("%d\n", ft_isalpha('3')); // should print 0
-    printf("%d\n", ft_isalpha('$')); // should print 0
-    return 0;
-}*/

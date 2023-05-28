@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emkalkan <emkalkan@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 15:44:29 by emkalkan          #+#    #+#             */
-/*   Updated: 2023/05/19 13:07:49 by emkalkan         ###   ########.fr       */
+/*   Created: 2023/05/18 19:58:23 by emkalkan          #+#    #+#             */
+/*   Updated: 2023/05/19 12:47:24 by emkalkan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+#include "libft.h"
+
+void ft_putstr_fd(char *s, int fd)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+    int i;
+    
+    i = 0;
+    while (s[i] != '\0')
+    {
+        ft_putchar_fd(s[i], fd);
+        i++;
+    }
 }
-
-/*#include <stdio.h>
-
-int ft_isalpha(int c);
-
-int main(void)
-{
-    printf("%d\n", ft_isalpha('a')); // should print 1
-    printf("%d\n", ft_isalpha('Z')); // should print 1
-    printf("%d\n", ft_isalpha('3')); // should print 0
-    printf("%d\n", ft_isalpha('$')); // should print 0
-    return 0;
-}*/

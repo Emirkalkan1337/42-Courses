@@ -12,7 +12,8 @@
 
 #include <stdio.h>
 
-int ft_atoi(const char *str) {
+int ft_atoi(const char *str)
+{
     
 	int result = 0;
 	int sign = 1;

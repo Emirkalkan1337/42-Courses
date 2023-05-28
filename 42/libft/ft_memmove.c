@@ -1,22 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emkalkan <emkalkan@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/18 19:13:48 by emkalkan          #+#    #+#             */
+/*   Updated: 2023/05/19 12:52:49 by emkalkan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+#include <stddef.h>
+
 void *ft_memmove(void *dest, const void *src, size_t n)
 {
-    char *destt = (char *) dest;
-    const char *srcc = (const char *) src;
+    char *destt = dest;
+    const char *srcc = src;
 
     if (destt <= srcc) 
     {
         while (n--)
-            *dest++ = *srcc++;
+            *destt++ = *srcc++;
     } 
     else 
     {
         destt += n;
         srcc += n;
         while (n--)
-            *--dest = *--srcc;
+            *--destt = *--srcc;
     }
 
-    return dest;
+    return (destt);
 }
 
 /*#include <stdio.h>
